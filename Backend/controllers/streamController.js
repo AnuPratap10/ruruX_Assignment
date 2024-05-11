@@ -14,9 +14,8 @@ exports.createStream = async (req, res) => {
 // Get all streams
 exports.getAllStreams = async (req, res) => {
   try {
-    const streams = await Stream.find()
-      .populate("students")
-      .populate("subjects");
+    const streams = await Stream.find();
+
     res.json(streams);
   } catch (err) {
     res.status(500).json({message: err.message});

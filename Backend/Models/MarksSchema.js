@@ -1,4 +1,4 @@
-// models/MarkSchema.js
+
 const mongoose = require("mongoose");
 
 const marksSchema = new mongoose.Schema({

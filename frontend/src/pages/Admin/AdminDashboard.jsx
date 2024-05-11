@@ -19,27 +19,37 @@ export const AdminDashboard = () => {
 
     fetchStudents();
   }, []);
-
+ 
   return (
     <>
-      <h3>AdminDashboard</h3>
-      <div style={{marginTop: "10px", padding: "10px", textDecoration: "none"}}>
+      <h3 style={{textAlign: "center"}}>AdminDashboard</h3>
+      <div
+        style={{
+          marginTop: "10px",
+          padding: "10px",
+          textDecoration: "none",
+          display: "flex",
+          justifyContent: "space-around",
+          
+          
+        }}
+      >
         <Link to="/admin/streams">
-          <button style={{marginLeft: "10px"}}>Stream</button>
+          <button style={{marginLeft: "10px", borderRadius:"10px"}}>Stream</button>
         </Link>
         <Link to="/admin/subject">
-          <button style={{marginLeft: "10px"}}> Subject</button>
+          <button style={{marginLeft: "10px",borderRadius:"10px"}}> Subject</button>
         </Link>
         <Link to="/admin/marks">
-          <button style={{marginLeft: "10px"}}>Marks</button>
+          <button style={{marginLeft: "10px",borderRadius:"10px"}}>Marks</button>
         </Link>
         <Link to="/admin/students">
-          <button style={{marginLeft: "10px"}}>Students</button>
+          <button style={{marginLeft: "10px",borderRadius:"10px"}}>Students</button>
         </Link>
       </div>
 
-      <div>
-        <h2>StudentList</h2>
+      <div className="m-3">
+        <h2 style={{textAlign: "center"}}>StudentList</h2>
         <table className="table">
           <thead>
             <tr>
