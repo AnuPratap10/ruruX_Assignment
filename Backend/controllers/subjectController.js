@@ -1,6 +1,5 @@
 const Subject = require("../Models/SubjectSchema");
 
-
 exports.createSubject = async (req, res) => {
   try {
     const subject = new Subject(req.body);
@@ -11,16 +10,14 @@ exports.createSubject = async (req, res) => {
   }
 };
 
-
 exports.getAllSubjects = async (req, res) => {
   try {
-    const subjects = await Subject.find();
+    const subjects = await Subject.find().populate("stream");
     res.json(subjects);
   } catch (err) {
     res.status(500).json({message: err.message});
   }
 };
-
 
 exports.getSubjectById = async (req, res) => {
   try {

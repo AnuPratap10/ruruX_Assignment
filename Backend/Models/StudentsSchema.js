@@ -27,6 +27,7 @@ const studentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  mark: {type: mongoose.Schema.Types.ObjectId, required: true},
 });
 
 module.exports = mongoose.model("Student", studentSchema);

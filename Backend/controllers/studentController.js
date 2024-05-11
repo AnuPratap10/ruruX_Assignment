@@ -14,7 +14,7 @@ exports.createStudent = async (req, res) => {
 // Get all students
 exports.getAllStudents = async (req, res) => {
   try {
-    const students = await Student.find().populate('stream');
+    const students = await Student.find().populate('stream').populate("subject").populate("mark")
     res.json(students);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -24,7 +24,7 @@ exports.getAllStudents = async (req, res) => {
 // Get a single student by ID
 exports.getStudentById = async (req, res) => {
   try {
-    const student = await Student.findById(req.params.id).populate('stream');
+    const student = await Student.findById(req.params.id).populate('stream').populate("subject").populate("mark")
     if (!student) {
       return res.status(404).json({ message: 'Student not found' });
     }
@@ -38,7 +38,7 @@ exports.getStudentById = async (req, res) => {
 exports.updateStudent = async (req, res) => {
   try {
     const { id } = req.params;
-    const student = await Student.findByIdAndUpdate(id, req.body, { new: true }).populate('stream');
+    const student = await Student.findByIdAndUpdate(id, req.body, { new: true }).populate('stream').populate("subject").populate("mark")
     if (!student) {
       return res.status(404).json({ message: 'Student not found' });
     }
@@ -52,7 +52,7 @@ exports.updateStudent = async (req, res) => {
 exports.deleteStudent = async (req, res) => {
   try {
     const { id } = req.params;
-    const student = await Student.findByIdAndDelete(id).populate('stream');
+    const student = await Student.findByIdAndDelete(id).populate('stream').populate("subject").populate("mark")
     if (!student) {
       return res.status(404).json({ message: 'Student not found' });
     }
