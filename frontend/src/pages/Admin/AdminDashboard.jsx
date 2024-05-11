@@ -37,7 +37,7 @@ export const AdminDashboard = () => {
         <Link to="/admin/streams">
           <button style={{marginLeft: "10px", borderRadius:"10px"}}>Stream</button>
         </Link>
-        <Link to="/admin/subject">
+        <Link to="/admin/subjects">
           <button style={{marginLeft: "10px",borderRadius:"10px"}}> Subject</button>
         </Link>
         <Link to="/admin/marks">
